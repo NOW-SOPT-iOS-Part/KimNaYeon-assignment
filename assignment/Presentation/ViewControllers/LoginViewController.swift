@@ -11,7 +11,24 @@ import SnapKit
 
 final class LoginViewController: BaseViewController {
     
+    // MARK: - UI Components
+    
+    private let loginView = LoginView()
+    
+    // MARK: - Life Cycles
+    
+    override func loadView() {
+        super.loadView()
+        
+        view = loginView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+}
+
+// MARK: - Extensions
+extension LoginViewController {
+    
 }

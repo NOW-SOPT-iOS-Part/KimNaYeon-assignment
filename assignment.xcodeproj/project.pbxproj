@@ -24,6 +24,10 @@
 		951D90E52BCD83890039E4A4 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 951D90DD2BCD83890039E4A4 /* Pretendard-Light.otf */; };
 		951D90E72BCD83B90039E4A4 /* FontLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D90E62BCD83B90039E4A4 /* FontLiterals.swift */; };
 		951D90E92BCD8C360039E4A4 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D90E82BCD8C360039E4A4 /* BaseView.swift */; };
+		951D90EB2BCD8EF60039E4A4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D90EA2BCD8EF60039E4A4 /* LoginView.swift */; };
+		951D90ED2BCD90B30039E4A4 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D90EC2BCD90B30039E4A4 /* UIView+.swift */; };
+		951D90EF2BCD91D70039E4A4 /* ColorLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D90EE2BCD91D70039E4A4 /* ColorLiterals.swift */; };
+		951D90F12BCD926E0039E4A4 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D90F02BCD926E0039E4A4 /* UIColor+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +49,10 @@
 		951D90DD2BCD83890039E4A4 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
 		951D90E62BCD83B90039E4A4 /* FontLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontLiterals.swift; sourceTree = "<group>"; };
 		951D90E82BCD8C360039E4A4 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		951D90EA2BCD8EF60039E4A4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		951D90EC2BCD90B30039E4A4 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		951D90EE2BCD91D70039E4A4 /* ColorLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLiterals.swift; sourceTree = "<group>"; };
+		951D90F02BCD926E0039E4A4 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +134,7 @@
 		951D90C92BCD7B0B0039E4A4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				951D90EA2BCD8EF60039E4A4 /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -133,6 +142,8 @@
 		951D90CA2BCD7B2F0039E4A4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				951D90EC2BCD90B30039E4A4 /* UIView+.swift */,
+				951D90F02BCD926E0039E4A4 /* UIColor+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -141,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				951D90E62BCD83B90039E4A4 /* FontLiterals.swift */,
+				951D90EE2BCD91D70039E4A4 /* ColorLiterals.swift */,
 			);
 			path = Literals;
 			sourceTree = "<group>";
@@ -264,11 +276,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				951D90E72BCD83B90039E4A4 /* FontLiterals.swift in Sources */,
+				951D90EB2BCD8EF60039E4A4 /* LoginView.swift in Sources */,
+				951D90EF2BCD91D70039E4A4 /* ColorLiterals.swift in Sources */,
 				951D90D12BCD7C050039E4A4 /* LoginViewController.swift in Sources */,
 				951D90D42BCD820F0039E4A4 /* BaseViewController.swift in Sources */,
+				951D90ED2BCD90B30039E4A4 /* UIView+.swift in Sources */,
 				951D90E92BCD8C360039E4A4 /* BaseView.swift in Sources */,
 				951D90B22BCD78F30039E4A4 /* AppDelegate.swift in Sources */,
 				951D90B42BCD78F30039E4A4 /* SceneDelegate.swift in Sources */,
+				951D90F12BCD926E0039E4A4 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

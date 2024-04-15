@@ -13,6 +13,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         bindViewModel()
         setStyle()
+        setHierarchy()
         setLayout()
         setDelegate()
         setRegister()
@@ -22,6 +23,8 @@ class BaseViewController: UIViewController {
     func bindViewModel() {}
     /// View의 Style을 set 합니다.
     func setStyle() {}
+    /// View의 Hierarchy를 set 합니다.
+    func setHierarchy() {}
     /// View의 Layout을 set 합니다.
     func setLayout() {}
     /// View의 Delegate을 set 합니다.
