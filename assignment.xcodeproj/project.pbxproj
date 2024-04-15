@@ -23,6 +23,7 @@
 		951D90E42BCD83890039E4A4 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 951D90DC2BCD83880039E4A4 /* Pretendard-ExtraLight.otf */; };
 		951D90E52BCD83890039E4A4 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 951D90DD2BCD83890039E4A4 /* Pretendard-Light.otf */; };
 		951D90E72BCD83B90039E4A4 /* FontLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D90E62BCD83B90039E4A4 /* FontLiterals.swift */; };
+		951D90E92BCD8C360039E4A4 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D90E82BCD8C360039E4A4 /* BaseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		951D90DC2BCD83880039E4A4 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
 		951D90DD2BCD83890039E4A4 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
 		951D90E62BCD83B90039E4A4 /* FontLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontLiterals.swift; sourceTree = "<group>"; };
+		951D90E82BCD8C360039E4A4 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				951D90D32BCD820F0039E4A4 /* BaseViewController.swift */,
+				951D90E82BCD8C360039E4A4 /* BaseView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				951D90E72BCD83B90039E4A4 /* FontLiterals.swift in Sources */,
 				951D90D12BCD7C050039E4A4 /* LoginViewController.swift in Sources */,
 				951D90D42BCD820F0039E4A4 /* BaseViewController.swift in Sources */,
+				951D90E92BCD8C360039E4A4 /* BaseView.swift in Sources */,
 				951D90B22BCD78F30039E4A4 /* AppDelegate.swift in Sources */,
 				951D90B42BCD78F30039E4A4 /* SceneDelegate.swift in Sources */,
 			);
