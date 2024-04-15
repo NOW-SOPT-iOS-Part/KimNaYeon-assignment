@@ -10,9 +10,8 @@ import UIKit
 import SnapKit
 
 final class LoginViewController: BaseViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
 }
