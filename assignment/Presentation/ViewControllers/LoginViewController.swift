@@ -33,3 +33,7 @@ final class LoginViewController: BaseViewController {
 extension LoginViewController {
     
 }
+
+#Preview {
+    LoginViewController()
+}
