@@ -15,7 +15,7 @@ final class LoginView: BaseView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "TVING ID 로그인"
+        label.text = I18N.Auth.tvingIdLoginText
         label.textColor = .gray1
         label.font = .font(ofSize: 23, weight: .w500)
         return label
