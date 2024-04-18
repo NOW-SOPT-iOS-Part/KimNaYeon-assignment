@@ -19,5 +19,6 @@ enum I18N {
         static let noAccountText = "아직 계정이 없으신가요?"
         static let goToCreateNicknameText = "닉네임 만들러가기"
         static let goMainText = "메인으로"
+        static let welcomeTitle = " 님\n반가워요!"
     }
 }

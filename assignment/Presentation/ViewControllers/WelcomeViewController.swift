@@ -11,9 +11,13 @@ import SnapKit
 
 final class WelcomeViewController: BaseViewController {
     
+    // MARK: - Properties
+    
+    var nickname: String?
+    
     // MARK: - UI Components
     
-    private let welcomeView = WelcomeView()
+    private lazy var welcomeView = WelcomeView(nickname: nickname ?? "")
     
     // MARK: - Life Cycles
     
@@ -35,10 +39,6 @@ final class WelcomeViewController: BaseViewController {
 extension WelcomeViewController {
     
     func setNavigationBar() {
-        self.navigationController?.isNavigationBarHidden = true
+//        self.navigationController?.isNavigationBarHidden = true
     }
-}
-
-#Preview {
-    WelcomeViewController()
 }

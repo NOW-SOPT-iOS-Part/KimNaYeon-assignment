@@ -53,6 +53,7 @@ final class LoginView: BaseView {
         button.titleLabel?.font = .font(ofSize: 14, weight: .w600)
         button.layer.cornerRadius = 3
         button.makeBorder(width: 1, color: .gray4)
+        button.isEnabled = false
         return button
     }()
     

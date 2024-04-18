@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 
 final class WelcomeView: BaseView {
-
+    
     // MARK: - UI Components
     
     private let logoImageView: UIImageView = {
@@ -22,7 +22,6 @@ final class WelcomeView: BaseView {
     
     private let welcomeTitle: UILabel = {
         let label = UILabel()
-        label.text = "nowsopt@naver.com 님\n반가워요!"
         label.textColor = .gray1
         label.font = .font(ofSize: 23, weight: .w700)
         label.textAlignment = .center
@@ -39,6 +38,17 @@ final class WelcomeView: BaseView {
         button.layer.cornerRadius = 3
         return button
     }()
+    
+    // MARK: - View Life Cycle
+    
+    init(nickname: String) {
+        welcomeTitle.text = nickname + I18N.Auth.welcomeTitle
+        super.init(frame: CGRect())
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Methods
     

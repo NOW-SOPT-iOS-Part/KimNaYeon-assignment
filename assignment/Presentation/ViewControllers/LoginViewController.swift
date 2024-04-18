@@ -51,6 +51,7 @@ extension LoginViewController {
     @objc
     func loginButtonDidTap() {
         let welcomeVC = WelcomeViewController()
+        welcomeVC.nickname = idTextField.text
         self.navigationController?.pushViewController(welcomeVC, animated: true)
     }
 }
@@ -63,5 +64,17 @@ extension LoginViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.makeBorder(width: 0, color: .clear)
+    }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if !idTextField.isEmpty, !passwordTextField.isEmpty {
+            loginButton.isEnabled = true
+            loginButton.backgroundColor = .red
+            loginButton.setTitleColor(.white, for: .normal)
+        } else {
+            loginButton.isEnabled = false
+            loginButton.backgroundColor = .black
+            loginButton.setTitleColor(.gray2, for: .normal)
+        }
     }
 }
