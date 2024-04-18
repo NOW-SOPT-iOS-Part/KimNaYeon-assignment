@@ -50,9 +50,11 @@ extension LoginViewController {
     
     @objc
     func loginButtonDidTap() {
-        let welcomeVC = WelcomeViewController()
-        welcomeVC.nickname = idTextField.text
-        self.navigationController?.pushViewController(welcomeVC, animated: true)
+        if let id = idTextField.text {
+            let welcomeVC = WelcomeViewController()
+            welcomeVC.nickname = id
+            self.navigationController?.pushViewController(welcomeVC, animated: true)
+        }
     }
 }
 

@@ -42,8 +42,8 @@ final class WelcomeView: BaseView {
     // MARK: - View Life Cycle
     
     init(nickname: String) {
-        welcomeTitle.text = nickname + I18N.Auth.welcomeTitle
         super.init(frame: CGRect())
+        bindData(nickname: nickname)
     }
     
     required init?(coder: NSCoder) {
@@ -76,6 +76,10 @@ final class WelcomeView: BaseView {
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.bottom.equalToSuperview().inset(66)
         }
+    }
+    
+    private func bindData(nickname: String) {
+        welcomeTitle.text = nickname + I18N.Auth.welcomeTitle
     }
 }
 

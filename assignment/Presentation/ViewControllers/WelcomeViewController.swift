@@ -13,11 +13,11 @@ final class WelcomeViewController: BaseViewController {
     
     // MARK: - Properties
     
-    var nickname: String?
+    var nickname: String = ""
     
     // MARK: - UI Components
     
-    private lazy var welcomeView = WelcomeView(nickname: nickname ?? "")
+    private lazy var welcomeView = WelcomeView(nickname: nickname)
     
     // MARK: - Life Cycles
     
