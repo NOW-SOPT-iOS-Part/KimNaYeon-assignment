@@ -18,5 +18,6 @@ enum I18N {
         static let findPasswordText = "비밀번호 찾기"
         static let noAccountText = "아직 계정이 없으신가요?"
         static let goToCreateNicknameText = "닉네임 만들러가기"
+        static let goMainText = "메인으로"
     }
 }

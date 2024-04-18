@@ -1,26 +1,26 @@
 //
-//  LoginViewController.swift
+//  WelcomeViewController.swift
 //  assignment
 //
-//  Created by 김나연 on 4/16/24.
+//  Created by 김나연 on 4/19/24.
 //
 
 import UIKit
 
 import SnapKit
 
-final class LoginViewController: BaseViewController {
+final class WelcomeViewController: BaseViewController {
     
     // MARK: - UI Components
     
-    private let loginView = LoginView()
+    private let welcomeView = WelcomeView()
     
     // MARK: - Life Cycles
     
     override func loadView() {
         super.loadView()
         
-        view = loginView
+        view = welcomeView
     }
     
     override func viewDidLoad() {
@@ -30,6 +30,10 @@ final class LoginViewController: BaseViewController {
 
 // MARK: - Extensions
 
-extension LoginViewController {
+extension WelcomeViewController {
     
+}
+
+#Preview {
+    WelcomeViewController()
 }

@@ -109,15 +109,7 @@ final class LoginView: BaseView {
         return stackView
     }()
     
-    // MARK: - View Life Cycle
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        setStyle()
-        setHierarchy()
-        setLayout()
-    }
+    // MARK: - Methods
     
     override func setStyle() {
         backgroundColor = .black
@@ -168,10 +160,6 @@ final class LoginView: BaseView {
             $0.top.equalTo(findIdButton.snp.bottom).offset(28)
             $0.centerX.equalToSuperview()
         }
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
 
