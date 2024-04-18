@@ -28,7 +28,6 @@ final class LoginView: BaseView {
         textField.font = .font(ofSize: 15, weight: .w600)
         textField.setPlaceholder(text: I18N.Auth.idText, color: .gray2, size: 15, weight: .w600)
         textField.setLeftPadding(amount: 22)
-        textField.setCustomClearButton()
         textField.layer.cornerRadius = 3
         return textField
     }()
@@ -110,10 +109,46 @@ final class LoginView: BaseView {
         return stackView
     }()
     
+    private let idClearButton: UIButton = {
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        button.setImage(UIImage(named: "icon_x-circle"), for: .normal)
+        button.tag = 0
+        return button
+    }()
+    
+    private let passwordClearButton: UIButton = {
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        button.setImage(UIImage(named: "icon_x-circle"), for: .normal)
+        button.tag = 1
+        return button
+    }()
+    
+    private let eyeButton: UIButton = {
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        button.setImage(UIImage(named: "icon_eye"), for: .normal)
+        return button
+    }()
+    
+    // MARK: - View Life Cycle
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        setStyle()
+        setHierarchy()
+        setLayout()
+        setButtonAction()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: - Methods
     
     override func setStyle() {
         backgroundColor = .black
+        setIdTextFieldCustomClearButton()
         setPasswordTextFieldRightViews()
     }
     
@@ -169,24 +204,35 @@ final class LoginView: BaseView {
 
 extension LoginView {
     
+    func setButtonAction() {
+        idClearButton.addTarget(self, action: #selector(clearButtonDidTap), for: .touchUpInside)
+        passwordClearButton.addTarget(self, action: #selector(clearButtonDidTap), for: .touchUpInside)
+        eyeButton.addTarget(self, action: #selector(eyeButtonDidTap), for: .touchUpInside)
+    }
+    
+    func setIdTextFieldCustomClearButton() {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: self.frame.size.height))
+        
+        stackView.snp.makeConstraints {
+            $0.width.equalTo(40)
+        }
+        stackView.addArrangedSubviews(idClearButton, paddingView)
+        idTextField.rightView = stackView
+        idTextField.rightViewMode = .whileEditing
+    }
+    
     func setPasswordTextFieldRightViews() {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.spacing = 16
-        
-        let clearButton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        clearButton.setImage(UIImage(named: "icon_x-circle"), for: .normal)
-        clearButton.addTarget(self, action: #selector(clearButtonDidTap), for: .touchUpInside)
-        let eyeButton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        eyeButton.setImage(UIImage(named: "icon_eye"), for: .normal)
-        eyeButton.addTarget(self, action: #selector(eyeButtonDidTap), for: .touchUpInside)
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 4, height: self.frame.size.height))
         
         stackView.snp.makeConstraints {
             $0.width.equalTo(76)
         }
-        stackView.addArrangedSubviews(clearButton, eyeButton, paddingView)
-        
+        stackView.addArrangedSubviews(passwordClearButton, eyeButton, paddingView)
         passwordTextField.rightView = stackView
         passwordTextField.rightViewMode = .whileEditing
     }
@@ -195,7 +241,14 @@ extension LoginView {
     
     @objc
     func clearButtonDidTap(_ sender: UIButton) {
-        
+        switch sender.tag {
+        case 0:
+            idTextField.text = ""
+        case 1:
+            passwordTextField.text = ""
+        default:
+            return
+        }
     }
     
     @objc

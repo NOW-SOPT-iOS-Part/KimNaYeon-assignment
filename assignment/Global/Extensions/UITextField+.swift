@@ -28,23 +28,6 @@ extension UITextField {
         self.rightViewMode = .always
     }
     
-    func setCustomClearButton() {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        
-        let clearButton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        clearButton.setImage(UIImage(named: "icon_x-circle"), for: .normal)
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: self.frame.size.height))
-        
-        stackView.snp.makeConstraints {
-            $0.width.equalTo(40)
-        }
-        stackView.addArrangedSubviews(clearButton, paddingView)
-        
-        self.rightView = stackView
-        self.rightViewMode = .whileEditing
-    }
-    
     func setPlaceholder(text: String, color: UIColor, size: CGFloat, weight: FontWeight) {
         attributedPlaceholder = NSAttributedString(
             string: text,
