@@ -25,6 +25,8 @@ final class WelcomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setNavigationBar()
     }
 }
 
@@ -32,6 +34,9 @@ final class WelcomeViewController: BaseViewController {
 
 extension WelcomeViewController {
     
+    func setNavigationBar() {
+        self.navigationController?.isNavigationBarHidden = true
+    }
 }
 
 #Preview {

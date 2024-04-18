@@ -21,7 +21,7 @@ final class LoginView: BaseView {
         return label
     }()
     
-    private let idTextField: UITextField = {
+    let idTextField: UITextField = {
         let textField = UITextField()
         textField.backgroundColor = .gray4
         textField.textColor = .gray2
@@ -33,7 +33,7 @@ final class LoginView: BaseView {
         return textField
     }()
     
-    private let passwordTextField: UITextField = {
+    let passwordTextField: UITextField = {
         let textField = UITextField()
         textField.backgroundColor = .gray4
         textField.textColor = .gray2
@@ -45,7 +45,7 @@ final class LoginView: BaseView {
         return textField
     }()
     
-    private let loginButton: UIButton = {
+    let loginButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .black
         button.setTitle(I18N.Auth.loginText, for: .normal)

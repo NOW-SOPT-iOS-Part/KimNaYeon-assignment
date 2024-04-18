@@ -14,6 +14,9 @@ final class LoginViewController: BaseViewController {
     // MARK: - UI Components
     
     private let loginView = LoginView()
+    private lazy var loginButton = loginView.loginButton
+    private lazy var idTextField = loginView.idTextField
+    private lazy var passwordTextField = loginView.passwordTextField
     
     // MARK: - Life Cycles
     
@@ -25,6 +28,13 @@ final class LoginViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setButtonAction()
+    }
+    
+    override func setDelegate() {
+        idTextField.delegate = self
+        passwordTextField.delegate = self
     }
 }
 
@@ -32,4 +42,26 @@ final class LoginViewController: BaseViewController {
 
 extension LoginViewController {
     
+    func setButtonAction() {
+        loginButton.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
+    }
+    
+    // MARK: - Actions
+    
+    @objc
+    func loginButtonDidTap() {
+        let welcomeVC = WelcomeViewController()
+        self.navigationController?.pushViewController(welcomeVC, animated: true)
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.makeBorder(width: 1, color: .gray2)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.makeBorder(width: 0, color: .clear)
+    }
 }
