@@ -28,7 +28,7 @@ final class LoginView: BaseView {
         textField.font = .font(ofSize: 15, weight: .w600)
         textField.setPlaceholder(text: I18N.Auth.idText, color: .gray2, size: 15, weight: .w600)
         textField.setLeftPadding(amount: 22)
-        textField.setRightPadding(amount: 22)
+        textField.setCustomClearButton()
         textField.layer.cornerRadius = 3
         return textField
     }()
@@ -40,8 +40,8 @@ final class LoginView: BaseView {
         textField.font = .font(ofSize: 15, weight: .w600)
         textField.setPlaceholder(text: I18N.Auth.passwordText, color: .gray2, size: 15, weight: .w600)
         textField.setLeftPadding(amount: 22)
-        textField.setRightPadding(amount: 22)
         textField.layer.cornerRadius = 3
+        textField.isSecureTextEntry = true
         return textField
     }()
     
@@ -114,6 +114,7 @@ final class LoginView: BaseView {
     
     override func setStyle() {
         backgroundColor = .black
+        setPasswordTextFieldRightViews()
     }
     
     override func setHierarchy() {
@@ -168,4 +169,38 @@ final class LoginView: BaseView {
 
 extension LoginView {
     
+    func setPasswordTextFieldRightViews() {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.spacing = 16
+        
+        let clearButton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        clearButton.setImage(UIImage(named: "icon_x-circle"), for: .normal)
+        clearButton.addTarget(self, action: #selector(clearButtonDidTap), for: .touchUpInside)
+        let eyeButton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        eyeButton.setImage(UIImage(named: "icon_eye"), for: .normal)
+        eyeButton.addTarget(self, action: #selector(eyeButtonDidTap), for: .touchUpInside)
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 4, height: self.frame.size.height))
+        
+        stackView.snp.makeConstraints {
+            $0.width.equalTo(76)
+        }
+        stackView.addArrangedSubviews(clearButton, eyeButton, paddingView)
+        
+        passwordTextField.rightView = stackView
+        passwordTextField.rightViewMode = .whileEditing
+    }
+    
+    // MARK: - Actions
+    
+    @objc
+    func clearButtonDidTap(_ sender: UIButton) {
+        
+    }
+    
+    @objc
+    func eyeButtonDidTap(_ sender: UIButton) {
+        passwordTextField.isSecureTextEntry.toggle()
+        sender.setImage(UIImage(named: passwordTextField.isSecureTextEntry ? "icon_eye" : "icon_eye-slash"), for: .normal)
+    }
 }
