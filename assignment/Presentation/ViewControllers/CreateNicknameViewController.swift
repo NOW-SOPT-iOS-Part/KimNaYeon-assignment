@@ -46,6 +46,10 @@ final class CreateNicknameViewController: BaseViewController {
             sheet.preferredCornerRadius = 26
         }
     }
+    
+    override func setDelegate() {
+        nicknameTextField.delegate = self
+    }
 }
 
 // MARK: - Extensions
@@ -62,6 +66,23 @@ extension CreateNicknameViewController {
         if let text = nicknameTextField.text {
             delegate?.dataBind(nickname: text)
             self.dismiss(animated: true)
+        }
+    }
+}
+
+extension CreateNicknameViewController: UITextFieldDelegate {
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if !nicknameTextField.isEmpty {
+            saveButton.isEnabled = true
+            saveButton.backgroundColor = .red
+            saveButton.makeBorder(width: 0, color: .clear)
+            saveButton.setTitleColor(.white, for: .normal)
+        } else {
+            saveButton.isEnabled = false
+            saveButton.backgroundColor = .clear
+            saveButton.makeBorder(width: 1, color: .gray4)
+            saveButton.setTitleColor(.gray2, for: .normal)
         }
     }
 }

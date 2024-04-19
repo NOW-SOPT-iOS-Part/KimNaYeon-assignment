@@ -77,14 +77,13 @@ final class WelcomeView: BaseView {
             $0.bottom.equalToSuperview().inset(66)
         }
     }
-    
-    private func bindData(nickname: String) {
-        welcomeTitle.text = nickname + I18N.Auth.welcomeTitle
-    }
 }
 
 // MARK: - Extensions
 
 extension WelcomeView {
     
+    private func bindData(nickname: String) {
+        welcomeTitle.text = nickname + I18N.Auth.welcomeTitle
+    }
 }

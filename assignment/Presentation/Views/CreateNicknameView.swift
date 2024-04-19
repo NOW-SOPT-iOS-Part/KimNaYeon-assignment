@@ -35,22 +35,14 @@ final class CreateNicknameView: BaseView {
     let saveButton: UIButton = {
         let button = UIButton()
         button.setTitle(I18N.Auth.saveText, for: .normal)
-        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.gray2, for: .normal)
         button.titleLabel?.font = .font(ofSize: 14, weight: .w600)
-        button.backgroundColor = .red
+        button.backgroundColor = .clear
         button.layer.cornerRadius = 12
+        button.makeBorder(width: 1, color: .gray4)
+        button.isEnabled = false
         return button
     }()
-    
-    // MARK: - View Life Cycle
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     // MARK: - Methods
     
