@@ -38,6 +38,7 @@
 		951D91042BD233810039E4A4 /* MakeAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91032BD233810039E4A4 /* MakeAlert.swift */; };
 		951D91082BD23E880039E4A4 /* CreateNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91072BD23E880039E4A4 /* CreateNicknameViewController.swift */; };
 		951D910A2BD23E9A0039E4A4 /* CreateNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91092BD23E9A0039E4A4 /* CreateNicknameView.swift */; };
+		951D910E2BD2BFFB0039E4A4 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D910D2BD2BFFB0039E4A4 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		951D91032BD233810039E4A4 /* MakeAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeAlert.swift; sourceTree = "<group>"; };
 		951D91072BD23E880039E4A4 /* CreateNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNicknameViewController.swift; sourceTree = "<group>"; };
 		951D91092BD23E9A0039E4A4 /* CreateNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNicknameView.swift; sourceTree = "<group>"; };
+		951D910D2BD2BFFB0039E4A4 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 		951D90D22BCD81AA0039E4A4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				951D910C2BD2BFE90039E4A4 /* Component */,
 				951D90D32BCD820F0039E4A4 /* BaseViewController.swift */,
 				951D90E82BCD8C360039E4A4 /* BaseView.swift */,
 			);
@@ -227,6 +230,14 @@
 				951D91032BD233810039E4A4 /* MakeAlert.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		951D910C2BD2BFE90039E4A4 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				951D910D2BD2BFFB0039E4A4 /* CustomTextField.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +338,7 @@
 				951D90D42BCD820F0039E4A4 /* BaseViewController.swift in Sources */,
 				951D90ED2BCD90B30039E4A4 /* UIView+.swift in Sources */,
 				951D90E92BCD8C360039E4A4 /* BaseView.swift in Sources */,
+				951D910E2BD2BFFB0039E4A4 /* CustomTextField.swift in Sources */,
 				951D90B22BCD78F30039E4A4 /* AppDelegate.swift in Sources */,
 				951D90F72BD18B990039E4A4 /* UIStackView+.swift in Sources */,
 				951D910A2BD23E9A0039E4A4 /* CreateNicknameView.swift in Sources */,

@@ -21,26 +21,19 @@ final class LoginView: BaseView {
         return label
     }()
     
-    let idTextField: UITextField = {
-        let textField = UITextField()
-        textField.backgroundColor = .gray4
-        textField.textColor = .gray2
-        textField.font = .font(ofSize: 15, weight: .w600)
+    let idTextField: CustomTextField = {
+        let textField = CustomTextField()
         textField.setPlaceholder(text: I18N.Auth.idText, color: .gray2, size: 15, weight: .w600)
-        textField.setLeftPadding(amount: 22)
-        textField.layer.cornerRadius = 3
+        textField.isClearButtonIncluded = true
         return textField
     }()
     
-    let passwordTextField: UITextField = {
-        let textField = UITextField()
-        textField.backgroundColor = .gray4
-        textField.textColor = .gray2
-        textField.font = .font(ofSize: 15, weight: .w600)
+    let passwordTextField: CustomTextField = {
+        let textField = CustomTextField()
         textField.setPlaceholder(text: I18N.Auth.passwordText, color: .gray2, size: 15, weight: .w600)
-        textField.setLeftPadding(amount: 22)
-        textField.layer.cornerRadius = 3
         textField.isSecureTextEntry = true
+        textField.isClearButtonIncluded = true
+        textField.isEyeButtonIncluded = true
         return textField
     }()
     
@@ -109,42 +102,12 @@ final class LoginView: BaseView {
         return stackView
     }()
     
-    private let idClearButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        button.setImage(UIImage(named: "icon_x-circle"), for: .normal)
-        return button
-    }()
-    
-    private let passwordClearButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        button.setImage(UIImage(named: "icon_x-circle"), for: .normal)
-        return button
-    }()
-    
-    private let eyeButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        button.setImage(UIImage(named: "icon_eye"), for: .normal)
-        return button
-    }()
-    
-    // MARK: - View Life Cycle
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        setButtonAction()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     // MARK: - Methods
     
     override func setStyle() {
         backgroundColor = .black
-        setIdTextFieldCustomClearButton()
-        setPasswordTextFieldRightViews()
+        idTextField.setTextFieldRightView()
+        passwordTextField.setTextFieldRightView()
     }
     
     override func setHierarchy() {
@@ -192,63 +155,5 @@ final class LoginView: BaseView {
             $0.top.equalTo(findIdButton.snp.bottom).offset(28)
             $0.centerX.equalToSuperview()
         }
-    }
-}
-
-// MARK: - Extensions
-
-extension LoginView {
-    
-    func setButtonAction() {
-        idClearButton.addTarget(self, action: #selector(clearButtonDidTap), for: .touchUpInside)
-        passwordClearButton.addTarget(self, action: #selector(clearButtonDidTap), for: .touchUpInside)
-        eyeButton.addTarget(self, action: #selector(eyeButtonDidTap), for: .touchUpInside)
-    }
-    
-    func setIdTextFieldCustomClearButton() {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: self.frame.size.height))
-        
-        stackView.snp.makeConstraints {
-            $0.width.equalTo(40)
-        }
-        stackView.addArrangedSubviews(idClearButton, paddingView)
-        idTextField.rightView = stackView
-        idTextField.rightViewMode = .whileEditing
-    }
-    
-    func setPasswordTextFieldRightViews() {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.spacing = 16
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 4, height: self.frame.size.height))
-        
-        stackView.snp.makeConstraints {
-            $0.width.equalTo(76)
-        }
-        stackView.addArrangedSubviews(passwordClearButton, eyeButton, paddingView)
-        passwordTextField.rightView = stackView
-        passwordTextField.rightViewMode = .whileEditing
-    }
-    
-    // MARK: - Actions
-    
-    @objc
-    func clearButtonDidTap(_ sender: UIButton) {
-        switch sender {
-        case idClearButton:
-            idTextField.text = ""
-        case passwordClearButton:
-            passwordTextField.text = ""
-        default:
-            return
-        }
-    }
-    
-    @objc
-    func eyeButtonDidTap(_ sender: UIButton) {
-        passwordTextField.isSecureTextEntry.toggle()
-        sender.setImage(UIImage(named: passwordTextField.isSecureTextEntry ? "icon_eye" : "icon_eye-slash"), for: .normal)
     }
 }
