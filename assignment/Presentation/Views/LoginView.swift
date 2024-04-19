@@ -93,7 +93,7 @@ final class LoginView: BaseView {
         return label
     }()
     
-    private let goToCreateNicknameButton = {
+    let goToCreateNicknameButton = {
         let button = UIButton()
         button.setTitle(I18N.Auth.goToCreateNicknameText, for: .normal)
         button.setTitleColor(.gray2, for: .normal)
@@ -134,9 +134,6 @@ final class LoginView: BaseView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setStyle()
-        setHierarchy()
-        setLayout()
         setButtonAction()
     }
     

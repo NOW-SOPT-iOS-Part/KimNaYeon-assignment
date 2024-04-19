@@ -36,6 +36,8 @@
 		951D90FF2BD190970039E4A4 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D90FE2BD190970039E4A4 /* WelcomeView.swift */; };
 		951D91012BD231AB0039E4A4 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91002BD231AB0039E4A4 /* String+.swift */; };
 		951D91042BD233810039E4A4 /* MakeAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91032BD233810039E4A4 /* MakeAlert.swift */; };
+		951D91082BD23E880039E4A4 /* CreateNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91072BD23E880039E4A4 /* CreateNicknameViewController.swift */; };
+		951D910A2BD23E9A0039E4A4 /* CreateNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91092BD23E9A0039E4A4 /* CreateNicknameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +71,8 @@
 		951D90FE2BD190970039E4A4 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		951D91002BD231AB0039E4A4 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		951D91032BD233810039E4A4 /* MakeAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeAlert.swift; sourceTree = "<group>"; };
+		951D91072BD23E880039E4A4 /* CreateNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNicknameViewController.swift; sourceTree = "<group>"; };
+		951D91092BD23E9A0039E4A4 /* CreateNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNicknameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,7 @@
 			children = (
 				951D90D02BCD7C050039E4A4 /* LoginViewController.swift */,
 				951D90FC2BD1907A0039E4A4 /* WelcomeViewController.swift */,
+				951D91072BD23E880039E4A4 /* CreateNicknameViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 			children = (
 				951D90EA2BCD8EF60039E4A4 /* LoginView.swift */,
 				951D90FE2BD190970039E4A4 /* WelcomeView.swift */,
+				951D91092BD23E9A0039E4A4 /* CreateNicknameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -311,6 +317,7 @@
 				951D90FB2BD18F500039E4A4 /* UIButton+.swift in Sources */,
 				951D90EB2BCD8EF60039E4A4 /* LoginView.swift in Sources */,
 				951D90FF2BD190970039E4A4 /* WelcomeView.swift in Sources */,
+				951D91082BD23E880039E4A4 /* CreateNicknameViewController.swift in Sources */,
 				951D90EF2BCD91D70039E4A4 /* ColorLiterals.swift in Sources */,
 				951D90F52BD178210039E4A4 /* UITextField+.swift in Sources */,
 				951D91042BD233810039E4A4 /* MakeAlert.swift in Sources */,
@@ -322,6 +329,7 @@
 				951D90E92BCD8C360039E4A4 /* BaseView.swift in Sources */,
 				951D90B22BCD78F30039E4A4 /* AppDelegate.swift in Sources */,
 				951D90F72BD18B990039E4A4 /* UIStackView+.swift in Sources */,
+				951D910A2BD23E9A0039E4A4 /* CreateNicknameView.swift in Sources */,
 				951D91012BD231AB0039E4A4 /* String+.swift in Sources */,
 				951D90B42BCD78F30039E4A4 /* SceneDelegate.swift in Sources */,
 				951D90F12BCD926E0039E4A4 /* UIColor+.swift in Sources */,

@@ -15,6 +15,7 @@ final class LoginViewController: BaseViewController {
     
     private let loginView = LoginView()
     private lazy var loginButton = loginView.loginButton
+    private lazy var goToCreateNicknameButton = loginView.goToCreateNicknameButton
     private lazy var idTextField = loginView.idTextField
     private lazy var passwordTextField = loginView.passwordTextField
     
@@ -44,6 +45,7 @@ extension LoginViewController {
     
     func setButtonAction() {
         loginButton.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
+        goToCreateNicknameButton.addTarget(self, action: #selector(goToCreateNicknameButtonDidTap), for: .touchUpInside)
     }
     
     // MARK: - Actions
@@ -63,6 +65,11 @@ extension LoginViewController {
                 makeAlert(title: "", message: I18N.Auth.emailValidationText)
             }
         }
+    }
+    
+    @objc func goToCreateNicknameButtonDidTap() {
+        let createNicknameVC = CreateNicknameViewController()
+        present(createNicknameVC, animated: true)
     }
 }
 
