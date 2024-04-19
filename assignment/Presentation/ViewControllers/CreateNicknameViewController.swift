@@ -61,18 +61,10 @@ extension CreateNicknameViewController {
     }
     
     func changeSaveButtonActivationState(to state: Bool) {
-        switch state {
-        case true:
-            saveButton.isEnabled = true
-            saveButton.backgroundColor = .red
-            saveButton.makeBorder(width: 0, color: .clear)
-            saveButton.setTitleColor(.white, for: .normal)
-        case false:
-            saveButton.isEnabled = false
-            saveButton.backgroundColor = .clear
-            saveButton.makeBorder(width: 1, color: .gray4)
-            saveButton.setTitleColor(.gray2, for: .normal)
-        }
+        saveButton.isEnabled = state
+        saveButton.backgroundColor = state ? .red : .clear
+        saveButton.makeBorder(width: state ? 0 : 1, color: state ? .clear : .gray4)
+        saveButton.setTitleColor(state ? .white : .gray2, for: .normal)
     }
     
     // MARK: - Actions

@@ -112,14 +112,12 @@ final class LoginView: BaseView {
     private let idClearButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         button.setImage(UIImage(named: "icon_x-circle"), for: .normal)
-        button.tag = 0
         return button
     }()
     
     private let passwordClearButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         button.setImage(UIImage(named: "icon_x-circle"), for: .normal)
-        button.tag = 1
         return button
     }()
     
@@ -238,10 +236,10 @@ extension LoginView {
     
     @objc
     func clearButtonDidTap(_ sender: UIButton) {
-        switch sender.tag {
-        case 0:
+        switch sender {
+        case idClearButton:
             idTextField.text = ""
-        case 1:
+        case passwordClearButton:
             passwordTextField.text = ""
         default:
             return

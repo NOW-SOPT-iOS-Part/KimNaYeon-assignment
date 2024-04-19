@@ -52,22 +52,26 @@ extension LoginViewController {
         goToCreateNicknameButton.addTarget(self, action: #selector(goToCreateNicknameButtonDidTap), for: .touchUpInside)
     }
     
+    func changeLoginButtonActivationState(to state: Bool) {
+        loginButton.isEnabled = state
+        loginButton.backgroundColor = state ? .red : .black
+        loginButton.setTitleColor(state ? .white : .gray2, for: .normal)
+    }
+    
     // MARK: - Actions
     
     @objc
     func loginButtonDidTap() {
         if let id = idTextField.text, let pw = passwordTextField.text {
-            if id.isValidEmail() {
-                if pw.isValidPassword() {
-                    let welcomeVC = WelcomeViewController()
-                    welcomeVC.nickname = nickname
-                    self.navigationController?.pushViewController(welcomeVC, animated: true)
-                } else {
-                    makeAlert(title: "", message: I18N.Auth.pwValidationText)
-                }
-            } else {
-                makeAlert(title: "", message: I18N.Auth.emailValidationText)
+            guard id.isValidEmail() else {
+                return makeAlert(title: "", message: I18N.Auth.emailValidationText)
             }
+            guard pw.isValidPassword() else {
+                return makeAlert(title: "", message: I18N.Auth.pwValidationText)
+            }
+            let welcomeVC = WelcomeViewController()
+            welcomeVC.nickname = nickname
+            self.navigationController?.pushViewController(welcomeVC, animated: true)
         }
     }
     
@@ -91,13 +95,9 @@ extension LoginViewController: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if !idTextField.isEmpty, !passwordTextField.isEmpty {
-            loginButton.isEnabled = true
-            loginButton.backgroundColor = .red
-            loginButton.setTitleColor(.white, for: .normal)
+            changeLoginButtonActivationState(to: true)
         } else {
-            loginButton.isEnabled = false
-            loginButton.backgroundColor = .black
-            loginButton.setTitleColor(.gray2, for: .normal)
+            changeLoginButtonActivationState(to: false)
         }
     }
 }
