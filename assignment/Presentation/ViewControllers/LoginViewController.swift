@@ -11,6 +11,10 @@ import SnapKit
 
 final class LoginViewController: BaseViewController {
     
+    // MARK: - Properties
+    
+    private var nickname = ""
+    
     // MARK: - UI Components
     
     private let loginView = LoginView()
@@ -56,7 +60,7 @@ extension LoginViewController {
             if id.isValidEmail() {
                 if pw.isValidPassword() {
                     let welcomeVC = WelcomeViewController()
-                    welcomeVC.nickname = id
+                    welcomeVC.nickname = nickname
                     self.navigationController?.pushViewController(welcomeVC, animated: true)
                 } else {
                     makeAlert(title: "", message: I18N.Auth.pwValidationText)
@@ -69,6 +73,7 @@ extension LoginViewController {
     
     @objc func goToCreateNicknameButtonDidTap() {
         let createNicknameVC = CreateNicknameViewController()
+        createNicknameVC.delegate = self
         present(createNicknameVC, animated: true)
     }
 }
@@ -93,5 +98,11 @@ extension LoginViewController: UITextFieldDelegate {
             loginButton.backgroundColor = .black
             loginButton.setTitleColor(.gray2, for: .normal)
         }
+    }
+}
+
+extension LoginViewController: DataBindProtocol {
+    func dataBind(nickname: String) {
+        self.nickname = nickname
     }
 }

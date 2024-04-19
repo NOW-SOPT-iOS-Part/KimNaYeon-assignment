@@ -7,11 +7,21 @@
 
 import UIKit
 
+protocol DataBindProtocol: AnyObject {
+    func dataBind(nickname: String)
+}
+
 final class CreateNicknameViewController: BaseViewController {
 
+    // MARK: - Properties
+    
+    weak var delegate: DataBindProtocol?
+    
     // MARK: - UI Components
     
     private let createNicknameView = CreateNicknameView()
+    private lazy var saveButton = createNicknameView.saveButton
+    private lazy var nicknameTextField = createNicknameView.nicknameTextField
     
     // MARK: - Life Cycles
     
@@ -32,7 +42,6 @@ final class CreateNicknameViewController: BaseViewController {
         self.modalPresentationStyle = .pageSheet
         if let sheet = self.sheetPresentationController {
             sheet.detents = [.medium()]
-//            sheet.delegate = self
             sheet.prefersGrabberVisible = true
             sheet.preferredCornerRadius = 26
         }
@@ -44,5 +53,15 @@ final class CreateNicknameViewController: BaseViewController {
 extension CreateNicknameViewController {
     
     func setButtonAction() {
+        saveButton.addTarget(self, action: #selector(saveButtonDidTap), for: .touchUpInside)
+    }
+    
+    // MARK: - Actions
+    
+    @objc func saveButtonDidTap() {
+        if let text = nicknameTextField.text {
+            delegate?.dataBind(nickname: text)
+            self.dismiss(animated: true)
+        }
     }
 }
