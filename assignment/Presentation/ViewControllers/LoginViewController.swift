@@ -50,10 +50,18 @@ extension LoginViewController {
     
     @objc
     func loginButtonDidTap() {
-        if let id = idTextField.text {
-            let welcomeVC = WelcomeViewController()
-            welcomeVC.nickname = id
-            self.navigationController?.pushViewController(welcomeVC, animated: true)
+        if let id = idTextField.text, let pw = passwordTextField.text {
+            if id.isValidEmail() {
+                if pw.isValidPassword() {
+                    let welcomeVC = WelcomeViewController()
+                    welcomeVC.nickname = id
+                    self.navigationController?.pushViewController(welcomeVC, animated: true)
+                } else {
+                    makeAlert(title: "", message: I18N.Auth.pwValidationText)
+                }
+            } else {
+                makeAlert(title: "", message: I18N.Auth.emailValidationText)
+            }
         }
     }
 }

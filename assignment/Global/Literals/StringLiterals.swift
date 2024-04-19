@@ -20,5 +20,7 @@ enum I18N {
         static let goToCreateNicknameText = "닉네임 만들러가기"
         static let goMainText = "메인으로"
         static let welcomeTitle = " 님\n반가워요!"
+        static let emailValidationText = "입력된 아이디가 이메일 형식 조건에 맞지 않습니다. 올바른 형식으로 다시 입력해주세요."
+        static let pwValidationText = "입력된 비밀번호가 조건에 맞지 않습니다. 올바른 형식으로 다시 입력해주세요."
     }
 }

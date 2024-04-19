@@ -34,6 +34,8 @@
 		951D90FB2BD18F500039E4A4 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D90FA2BD18F500039E4A4 /* UIButton+.swift */; };
 		951D90FD2BD1907A0039E4A4 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D90FC2BD1907A0039E4A4 /* WelcomeViewController.swift */; };
 		951D90FF2BD190970039E4A4 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D90FE2BD190970039E4A4 /* WelcomeView.swift */; };
+		951D91012BD231AB0039E4A4 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91002BD231AB0039E4A4 /* String+.swift */; };
+		951D91042BD233810039E4A4 /* MakeAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91032BD233810039E4A4 /* MakeAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +67,8 @@
 		951D90FA2BD18F500039E4A4 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		951D90FC2BD1907A0039E4A4 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		951D90FE2BD190970039E4A4 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		951D91002BD231AB0039E4A4 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		951D91032BD233810039E4A4 /* MakeAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				951D90CC2BCD7B430039E4A4 /* Resource */,
+				951D91022BD233630039E4A4 /* Utils */,
 				951D90CB2BCD7B340039E4A4 /* Literals */,
 				951D90CA2BCD7B2F0039E4A4 /* Extensions */,
 			);
@@ -161,6 +166,7 @@
 				951D90F42BD178210039E4A4 /* UITextField+.swift */,
 				951D90F62BD18B990039E4A4 /* UIStackView+.swift */,
 				951D90FA2BD18F500039E4A4 /* UIButton+.swift */,
+				951D91002BD231AB0039E4A4 /* String+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -207,6 +213,14 @@
 				951D90D92BCD83880039E4A4 /* Pretendard-Thin.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		951D91022BD233630039E4A4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				951D91032BD233810039E4A4 /* MakeAlert.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +313,7 @@
 				951D90FF2BD190970039E4A4 /* WelcomeView.swift in Sources */,
 				951D90EF2BCD91D70039E4A4 /* ColorLiterals.swift in Sources */,
 				951D90F52BD178210039E4A4 /* UITextField+.swift in Sources */,
+				951D91042BD233810039E4A4 /* MakeAlert.swift in Sources */,
 				951D90F32BD177160039E4A4 /* StringLiterals.swift in Sources */,
 				951D90FD2BD1907A0039E4A4 /* WelcomeViewController.swift in Sources */,
 				951D90D12BCD7C050039E4A4 /* LoginViewController.swift in Sources */,
@@ -307,6 +322,7 @@
 				951D90E92BCD8C360039E4A4 /* BaseView.swift in Sources */,
 				951D90B22BCD78F30039E4A4 /* AppDelegate.swift in Sources */,
 				951D90F72BD18B990039E4A4 /* UIStackView+.swift in Sources */,
+				951D91012BD231AB0039E4A4 /* String+.swift in Sources */,
 				951D90B42BCD78F30039E4A4 /* SceneDelegate.swift in Sources */,
 				951D90F12BCD926E0039E4A4 /* UIColor+.swift in Sources */,
 			);
