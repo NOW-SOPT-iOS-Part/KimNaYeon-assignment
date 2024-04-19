@@ -74,7 +74,8 @@ extension LoginViewController {
     @objc func goToCreateNicknameButtonDidTap() {
         let createNicknameVC = CreateNicknameViewController()
         createNicknameVC.delegate = self
-        present(createNicknameVC, animated: true)
+        createNicknameVC.modalPresentationStyle = .pageSheet
+        self.present(createNicknameVC, animated: true)
     }
 }
 

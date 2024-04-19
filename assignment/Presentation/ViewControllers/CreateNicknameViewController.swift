@@ -39,7 +39,7 @@ final class CreateNicknameViewController: BaseViewController {
     
     override func setStyle() {
         self.view.backgroundColor = .white
-        self.modalPresentationStyle = .pageSheet
+        
         if let sheet = self.sheetPresentationController {
             sheet.detents = [.medium()]
             sheet.prefersGrabberVisible = true
