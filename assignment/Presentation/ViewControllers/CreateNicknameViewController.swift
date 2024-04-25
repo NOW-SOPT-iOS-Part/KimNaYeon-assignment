@@ -11,7 +11,7 @@ protocol DataBindProtocol: AnyObject {
     func dataBind(nickname: String)
 }
 
-final class CreateNicknameViewController: BaseViewController {
+final class CreateNicknameViewController: UIViewController {
 
     // MARK: - Properties
     
@@ -19,25 +19,32 @@ final class CreateNicknameViewController: BaseViewController {
     
     // MARK: - UI Components
     
-    private let createNicknameView = CreateNicknameView()
-    private lazy var saveButton = createNicknameView.saveButton
-    private lazy var nicknameTextField = createNicknameView.nicknameTextField
+    private let rootView = CreateNicknameView()
+    private lazy var saveButton = rootView.saveButton
+    private lazy var nicknameTextField = rootView.nicknameTextField
     
     // MARK: - Life Cycles
     
     override func loadView() {
         super.loadView()
         
-        view = createNicknameView
+        view = rootView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setStyle()
+        setDelegate()
         setButtonAction()
     }
+}
+
+// MARK: - Extensions
+
+extension CreateNicknameViewController {
     
-    override func setStyle() {
+    func setStyle() {
         self.view.backgroundColor = .white
         
         if let sheet = self.sheetPresentationController {
@@ -47,14 +54,9 @@ final class CreateNicknameViewController: BaseViewController {
         }
     }
     
-    override func setDelegate() {
+    func setDelegate() {
         nicknameTextField.delegate = self
     }
-}
-
-// MARK: - Extensions
-
-extension CreateNicknameViewController {
     
     func setButtonAction() {
         saveButton.addTarget(self, action: #selector(saveButtonDidTap), for: .touchUpInside)

@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-final class LoginViewController: BaseViewController {
+final class LoginViewController: UIViewController {
     
     // MARK: - Properties
     
@@ -17,35 +17,36 @@ final class LoginViewController: BaseViewController {
     
     // MARK: - UI Components
     
-    private let loginView = LoginView()
-    private lazy var loginButton = loginView.loginButton
-    private lazy var goToCreateNicknameButton = loginView.goToCreateNicknameButton
-    private lazy var idTextField = loginView.idTextField
-    private lazy var passwordTextField = loginView.passwordTextField
+    private let rootView = LoginView()
+    private lazy var loginButton = rootView.loginButton
+    private lazy var goToCreateNicknameButton = rootView.goToCreateNicknameButton
+    private lazy var idTextField = rootView.idTextField
+    private lazy var passwordTextField = rootView.passwordTextField
     
     // MARK: - Life Cycles
     
     override func loadView() {
         super.loadView()
         
-        view = loginView
+        view = rootView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setDelegate()
         setButtonAction()
-    }
-    
-    override func setDelegate() {
-        idTextField.delegate = self
-        passwordTextField.delegate = self
     }
 }
 
 // MARK: - Extensions
 
-extension LoginViewController {
+private extension LoginViewController {
+    
+    func setDelegate() {
+        idTextField.delegate = self
+        passwordTextField.delegate = self
+    }
     
     func setButtonAction() {
         loginButton.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)

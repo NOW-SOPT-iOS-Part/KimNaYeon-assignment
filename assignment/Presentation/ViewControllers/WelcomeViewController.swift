@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-final class WelcomeViewController: BaseViewController {
+final class WelcomeViewController: UIViewController {
     
     // MARK: - Properties
     
@@ -17,14 +17,14 @@ final class WelcomeViewController: BaseViewController {
     
     // MARK: - UI Components
     
-    private lazy var welcomeView = WelcomeView(nickname: nickname)
+    private lazy var rootView = WelcomeView(nickname: nickname)
     
     // MARK: - Life Cycles
     
     override func loadView() {
         super.loadView()
         
-        view = welcomeView
+        view = rootView
     }
     
     override func viewDidLoad() {
@@ -39,6 +39,6 @@ final class WelcomeViewController: BaseViewController {
 extension WelcomeViewController {
     
     func setNavigationBar() {
-//        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = true
     }
 }

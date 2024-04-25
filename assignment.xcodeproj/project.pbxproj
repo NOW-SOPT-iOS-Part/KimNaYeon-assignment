@@ -13,7 +13,6 @@
 		951D90BE2BCD78F50039E4A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 951D90BC2BCD78F50039E4A4 /* LaunchScreen.storyboard */; };
 		951D90CF2BCD7B9A0039E4A4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 951D90CE2BCD7B9A0039E4A4 /* SnapKit */; };
 		951D90D12BCD7C050039E4A4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D90D02BCD7C050039E4A4 /* LoginViewController.swift */; };
-		951D90D42BCD820F0039E4A4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D90D32BCD820F0039E4A4 /* BaseViewController.swift */; };
 		951D90DE2BCD83890039E4A4 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 951D90D62BCD83880039E4A4 /* Pretendard-Regular.otf */; };
 		951D90DF2BCD83890039E4A4 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 951D90D72BCD83880039E4A4 /* Pretendard-Medium.otf */; };
 		951D90E02BCD83890039E4A4 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 951D90D82BCD83880039E4A4 /* Pretendard-SemiBold.otf */; };
@@ -49,7 +48,6 @@
 		951D90BD2BCD78F50039E4A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		951D90BF2BCD78F50039E4A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		951D90D02BCD7C050039E4A4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		951D90D32BCD820F0039E4A4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		951D90D62BCD83880039E4A4 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		951D90D72BCD83880039E4A4 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		951D90D82BCD83880039E4A4 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
@@ -202,9 +200,8 @@
 		951D90D22BCD81AA0039E4A4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				951D912B2BDAB15E0039E4A4 /* Base */,
 				951D910C2BD2BFE90039E4A4 /* Component */,
-				951D90D32BCD820F0039E4A4 /* BaseViewController.swift */,
-				951D90E82BCD8C360039E4A4 /* BaseView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -238,6 +235,14 @@
 				951D910D2BD2BFFB0039E4A4 /* CustomTextField.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		951D912B2BDAB15E0039E4A4 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				951D90E82BCD8C360039E4A4 /* BaseView.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,7 +340,6 @@
 				951D90F32BD177160039E4A4 /* StringLiterals.swift in Sources */,
 				951D90FD2BD1907A0039E4A4 /* WelcomeViewController.swift in Sources */,
 				951D90D12BCD7C050039E4A4 /* LoginViewController.swift in Sources */,
-				951D90D42BCD820F0039E4A4 /* BaseViewController.swift in Sources */,
 				951D90ED2BCD90B30039E4A4 /* UIView+.swift in Sources */,
 				951D90E92BCD8C360039E4A4 /* BaseView.swift in Sources */,
 				951D910E2BD2BFFB0039E4A4 /* CustomTextField.swift in Sources */,

@@ -71,7 +71,7 @@ extension CustomTextField {
     }
     
     func setTextFieldRightView() {
-        var buttons = [(clearButton, isClearButtonIncluded), (eyeButton, isEyeButtonIncluded)]
+        let buttons = [(clearButton, isClearButtonIncluded), (eyeButton, isEyeButtonIncluded)]
             .compactMap {
                 if $0.1 { return $0.0 }
                 else { return nil }
