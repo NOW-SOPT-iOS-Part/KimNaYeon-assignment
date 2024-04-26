@@ -15,7 +15,7 @@ final class WelcomeView: BaseView {
     
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "tving-logo")
+        imageView.image = ImageLiterals.Logo.tving_logo
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
@@ -29,7 +29,7 @@ final class WelcomeView: BaseView {
         return label
     }()
     
-    private let goMainButton: UIButton = {
+    let goMainButton: UIButton = {
         let button = UIButton()
         button.setTitle(I18N.Auth.goMainText, for: .normal)
         button.setTitleColor(.white, for: .normal)

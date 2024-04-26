@@ -22,11 +22,6 @@ class BaseView: UIView {
         setStyle()
         setHierarchy()
         setLayout()
-        if isDelegateUsed() { setDelegate() }
-    }
-    
-    func isDelegateUsed() -> Bool {
-        return false
     }
     
     /// View의 Style을 set 합니다.
@@ -35,6 +30,4 @@ class BaseView: UIView {
     func setHierarchy() {}
     /// View의 Layout을 set 합니다.
     func setLayout() {}
-    /// View의 Delegate을 set 합니다.
-    func setDelegate() {}
 }
