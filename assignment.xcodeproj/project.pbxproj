@@ -42,6 +42,7 @@
 		951D91332BDBF9520039E4A4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91322BDBF9520039E4A4 /* MainView.swift */; };
 		951D91352BDBFDB60039E4A4 /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91342BDBFDB60039E4A4 /* ImageLiterals.swift */; };
 		951D91372BDBFFB90039E4A4 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91362BDBFFB90039E4A4 /* UIImage+.swift */; };
+		951D91392BDC03BF0039E4A4 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91382BDC03BF0039E4A4 /* CustomNavigationBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		951D91322BDBF9520039E4A4 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		951D91342BDBFDB60039E4A4 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
 		951D91362BDBFFB90039E4A4 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		951D91382BDC03BF0039E4A4 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				951D910D2BD2BFFB0039E4A4 /* CustomTextField.swift */,
+				951D91382BDC03BF0039E4A4 /* CustomNavigationBar.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				951D90F32BD177160039E4A4 /* StringLiterals.swift in Sources */,
 				951D90FD2BD1907A0039E4A4 /* WelcomeViewController.swift in Sources */,
 				951D90D12BCD7C050039E4A4 /* LoginViewController.swift in Sources */,
+				951D91392BDC03BF0039E4A4 /* CustomNavigationBar.swift in Sources */,
 				951D90ED2BCD90B30039E4A4 /* UIView+.swift in Sources */,
 				951D90E92BCD8C360039E4A4 /* BaseView.swift in Sources */,
 				951D910E2BD2BFFB0039E4A4 /* CustomTextField.swift in Sources */,
