@@ -43,6 +43,11 @@
 		951D91352BDBFDB60039E4A4 /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91342BDBFDB60039E4A4 /* ImageLiterals.swift */; };
 		951D91372BDBFFB90039E4A4 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91362BDBFFB90039E4A4 /* UIImage+.swift */; };
 		951D91392BDC03BF0039E4A4 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91382BDC03BF0039E4A4 /* CustomNavigationBar.swift */; };
+		951D913B2BDC113B0039E4A4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D913A2BDC113B0039E4A4 /* HomeViewController.swift */; };
+		951D913E2BDC21780039E4A4 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D913D2BDC21780039E4A4 /* MenuCollectionViewCell.swift */; };
+		951D91412BDC22A90039E4A4 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91402BDC22A90039E4A4 /* MenuModel.swift */; };
+		951D91632BDFFECF0039E4A4 /* SizeLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91622BDFFECF0039E4A4 /* SizeLiterals.swift */; };
+		951D91652BDFFF9B0039E4A4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91642BDFFF9B0039E4A4 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +88,11 @@
 		951D91342BDBFDB60039E4A4 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
 		951D91362BDBFFB90039E4A4 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		951D91382BDC03BF0039E4A4 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		951D913A2BDC113B0039E4A4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		951D913D2BDC21780039E4A4 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		951D91402BDC22A90039E4A4 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
+		951D91622BDFFECF0039E4A4 /* SizeLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeLiterals.swift; sourceTree = "<group>"; };
+		951D91642BDFFF9B0039E4A4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +157,8 @@
 		951D90C72BCD7AE20039E4A4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				951D913F2BDC22970039E4A4 /* Models */,
+				951D913C2BDC20C00039E4A4 /* Cells */,
 				951D90C92BCD7B0B0039E4A4 /* Views */,
 				951D90C82BCD7B020039E4A4 /* ViewControllers */,
 				951D90D22BCD81AA0039E4A4 /* Common */,
@@ -161,6 +173,7 @@
 				951D90FC2BD1907A0039E4A4 /* WelcomeViewController.swift */,
 				951D91072BD23E880039E4A4 /* CreateNicknameViewController.swift */,
 				951D91302BDBF94B0039E4A4 /* MainViewController.swift */,
+				951D913A2BDC113B0039E4A4 /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -172,6 +185,7 @@
 				951D90FE2BD190970039E4A4 /* WelcomeView.swift */,
 				951D91092BD23E9A0039E4A4 /* CreateNicknameView.swift */,
 				951D91322BDBF9520039E4A4 /* MainView.swift */,
+				951D91642BDFFF9B0039E4A4 /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -197,6 +211,7 @@
 				951D90EE2BCD91D70039E4A4 /* ColorLiterals.swift */,
 				951D90F22BD177160039E4A4 /* StringLiterals.swift */,
 				951D91342BDBFDB60039E4A4 /* ImageLiterals.swift */,
+				951D91622BDFFECF0039E4A4 /* SizeLiterals.swift */,
 			);
 			path = Literals;
 			sourceTree = "<group>";
@@ -258,6 +273,22 @@
 				951D90E82BCD8C360039E4A4 /* BaseView.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		951D913C2BDC20C00039E4A4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				951D913D2BDC21780039E4A4 /* MenuCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		951D913F2BDC22970039E4A4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				951D91402BDC22A90039E4A4 /* MenuModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,6 +377,8 @@
 			files = (
 				951D91312BDBF94B0039E4A4 /* MainViewController.swift in Sources */,
 				951D90E72BCD83B90039E4A4 /* FontLiterals.swift in Sources */,
+				951D913E2BDC21780039E4A4 /* MenuCollectionViewCell.swift in Sources */,
+				951D91652BDFFF9B0039E4A4 /* HomeView.swift in Sources */,
 				951D90FB2BD18F500039E4A4 /* UIButton+.swift in Sources */,
 				951D90EB2BCD8EF60039E4A4 /* LoginView.swift in Sources */,
 				951D91352BDBFDB60039E4A4 /* ImageLiterals.swift in Sources */,
@@ -355,17 +388,20 @@
 				951D91332BDBF9520039E4A4 /* MainView.swift in Sources */,
 				951D90F52BD178210039E4A4 /* UITextField+.swift in Sources */,
 				951D91042BD233810039E4A4 /* MakeAlert.swift in Sources */,
+				951D913B2BDC113B0039E4A4 /* HomeViewController.swift in Sources */,
 				951D90F32BD177160039E4A4 /* StringLiterals.swift in Sources */,
 				951D90FD2BD1907A0039E4A4 /* WelcomeViewController.swift in Sources */,
 				951D90D12BCD7C050039E4A4 /* LoginViewController.swift in Sources */,
 				951D91392BDC03BF0039E4A4 /* CustomNavigationBar.swift in Sources */,
 				951D90ED2BCD90B30039E4A4 /* UIView+.swift in Sources */,
 				951D90E92BCD8C360039E4A4 /* BaseView.swift in Sources */,
+				951D91632BDFFECF0039E4A4 /* SizeLiterals.swift in Sources */,
 				951D910E2BD2BFFB0039E4A4 /* CustomTextField.swift in Sources */,
 				951D90B22BCD78F30039E4A4 /* AppDelegate.swift in Sources */,
 				951D90F72BD18B990039E4A4 /* UIStackView+.swift in Sources */,
 				951D910A2BD23E9A0039E4A4 /* CreateNicknameView.swift in Sources */,
 				951D91012BD231AB0039E4A4 /* String+.swift in Sources */,
+				951D91412BDC22A90039E4A4 /* MenuModel.swift in Sources */,
 				951D91372BDBFFB90039E4A4 /* UIImage+.swift in Sources */,
 				951D90B42BCD78F30039E4A4 /* SceneDelegate.swift in Sources */,
 				951D90F12BCD926E0039E4A4 /* UIColor+.swift in Sources */,
