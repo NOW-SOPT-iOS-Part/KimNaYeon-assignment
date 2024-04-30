@@ -16,6 +16,7 @@ final class ImageCarouselCollectionViewCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .gray1
+        imageView.clipsToBounds = true
         return imageView
     }()
     

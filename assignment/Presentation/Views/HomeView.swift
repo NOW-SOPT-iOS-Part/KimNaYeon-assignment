@@ -43,7 +43,13 @@ final class HomeView: BaseView {
 }
 
 private extension HomeView {
-
+    
+    func setInterSectionSpacing(_ layout: UICollectionViewCompositionalLayout) {
+        let config = UICollectionViewCompositionalLayoutConfiguration()
+        config.interSectionSpacing = 18
+        layout.configuration = config
+    }
+    
     func setSectionLayout() -> UICollectionViewCompositionalLayout {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment -> NSCollectionLayoutSection? in
             let sectionType = Section.allCases[sectionIndex]
@@ -58,6 +64,7 @@ private extension HomeView {
                 return self.getImageBannerSectionLayout(sectionType: sectionType)
             }
         }
+        setInterSectionSpacing(layout)
         return layout
     }
     
@@ -77,9 +84,9 @@ private extension HomeView {
 
         let section = NSCollectionLayoutSection(group: group)
         let footer = getSectionFooter()
-        section.boundarySupplementaryItems = [footer]
         section.orthogonalScrollingBehavior = .paging
-        section.contentInsets = .init(top: 0, leading: 0, bottom: 80, trailing: 0)
+        section.contentInsets = .init(top: 0, leading: 0, bottom: 11, trailing: 0)
+        section.boundarySupplementaryItems = [footer]
         
         return section
     }
@@ -90,8 +97,7 @@ private extension HomeView {
             heightDimension: .fractionalHeight(1)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = .init(top: 13, leading: 0, bottom: 0, trailing: 8)
-
+        
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .absolute(98),
             heightDimension: .absolute(166)
@@ -100,9 +106,10 @@ private extension HomeView {
 
         let section = NSCollectionLayoutSection(group: group)
         let header = getSectionHeader()
-        section.boundarySupplementaryItems = [header]
+        section.interGroupSpacing = 8
         section.orthogonalScrollingBehavior = .continuous
-        section.contentInsets = .init(top: 0, leading: 15, bottom: 18, trailing: 0)
+        section.contentInsets = .init(top: 14, leading: 15, bottom: 0, trailing: 0)
+        section.boundarySupplementaryItems = [header]
         
         return section
     }
@@ -113,7 +120,6 @@ private extension HomeView {
             heightDimension: .fractionalHeight(1)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = .init(top: 8, leading: 0, bottom: 0, trailing: 7)
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .absolute(160),
@@ -123,9 +129,10 @@ private extension HomeView {
 
         let section = NSCollectionLayoutSection(group: group)
         let header = getSectionHeader()
+        section.interGroupSpacing = 7
         section.boundarySupplementaryItems = [header]
         section.orthogonalScrollingBehavior = .continuous
-        section.contentInsets = .init(top: 0, leading: 12, bottom: 18, trailing: 0)
+        section.contentInsets = .init(top: 8, leading: 15, bottom: 0, trailing: 0)
 
         return section
     }
@@ -146,7 +153,7 @@ private extension HomeView {
 
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
-        section.contentInsets = .init(top: 31, leading: 0, bottom: 38, trailing: 0)
+        section.contentInsets = .init(top: 49-18, leading: 0, bottom: 38, trailing: 0)
         
         return section
     }
@@ -167,11 +174,12 @@ private extension HomeView {
         let footer = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1),
-                heightDimension: .absolute(20)
+                heightDimension: .absolute(14)
             ),
             elementKind: UICollectionView.elementKindSectionFooter,
-            alignment: .bottomLeading,
-            absoluteOffset: CGPoint(x: -140, y: -32)
+            alignment: .bottomLeading
+//            containerAnchor: NSCollectionLayoutAnchor(edges: [.bottom], absoluteOffset: CGPoint(x: -140, y: 0))
+//            absoluteOffset: CGPoint(x: -140, y: -10)
         )
         return footer
      }
