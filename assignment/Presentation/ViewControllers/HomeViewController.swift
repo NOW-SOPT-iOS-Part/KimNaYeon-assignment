@@ -11,7 +11,37 @@ final class HomeViewController: UIViewController {
     
     // MARK: - Properties
     /// dummy data
-    private let imageBanners = [ImageLiterals.Image.bears_white_rect, ImageLiterals.Image.bears_black_rect]
+    private let carouselMovies = [
+        ImageLiterals.Image.yourNameIs,
+        ImageLiterals.Image.suzume,
+        ImageLiterals.Image.lordOfTheRings,
+        ImageLiterals.Image.harrypotter,
+        ImageLiterals.Image.yourNameIs,
+        ImageLiterals.Image.suzume,
+        ImageLiterals.Image.lordOfTheRings,
+        ImageLiterals.Image.harrypotter
+    ]
+    private let movies = [
+        [ImageLiterals.Image.signal, "시그널"],
+        [ImageLiterals.Image.harrypotter, "해리포터와 마법사의 돌"],
+        [ImageLiterals.Image.lordOfTheRings, "반지의 제왕"],
+        [ImageLiterals.Image.suzume, "스즈메의 문단속"],
+        [ImageLiterals.Image.signal, "시그널"],
+        [ImageLiterals.Image.harrypotter, "해리포터와 마법사의 돌"],
+        [ImageLiterals.Image.lordOfTheRings, "반지의 제왕"],
+        [ImageLiterals.Image.suzume, "스즈메의 문단속"],
+    ]
+    private let liveChannels = [
+        [1, "OCN Movies", "헝거게임: 판엠의 불꽃", 81.3],
+        [2, "투니버스", "명탐정 코난 극장판: 베이커가의 망령", 27.4],
+        [3, "tvN", "지구오락실2", 15.3],
+        [4, "tvN DRAMA", "눈물의 여왕", 13.2],
+        [5, "YTN", "YTN 24", 4.7],
+    ]
+    private let imageBanners = [
+        ImageLiterals.Image.bears_white_rect,
+        ImageLiterals.Image.bears_black_rect
+    ]
     
     // MARK: - UI Components
     
@@ -77,15 +107,26 @@ extension HomeViewController: UICollectionViewDataSource {
         switch sectionType {
         case .carousel:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCarouselCollectionViewCell.identifier, for: indexPath) as? ImageCarouselCollectionViewCell else { return UICollectionViewCell() }
-            cell.configure(image: ImageLiterals.Image.yourNameIs)
+            cell.configure(image: carouselMovies[indexPath.item])
             return cell
         case .liveChannel:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChannelCollectionViewCell.identifier, for: indexPath) as? ChannelCollectionViewCell else { return UICollectionViewCell() }
-            cell.configure(image: nil, rank: 1, channel: "Mnet", program: "Who Is Next 1화", viewership: 80.6)
+            let data = liveChannels[indexPath.item]
+            cell.configure(
+                image: nil,
+                rank: data[0] as! Int,
+                channel: data[1] as! String,
+                program: data[2] as! String,
+                viewership: data[3] as! Double
+            )
             return cell
         case .mustSeeContent, .paramount:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as? MovieCollectionViewCell else { return UICollectionViewCell() }
-            cell.configure(image: ImageLiterals.Image.suzume, title: "시그널2 제발 나와주세요")
+            let data = movies[indexPath.item]
+            cell.configure(
+                image: data[0] as? UIImage,
+                title: data[1] as! String
+            )
             return cell
         case .imageBanner:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageBannerCollectionViewCell.identifier, for: indexPath) as? ImageBannerCollectionViewCell else { return UICollectionViewCell() }

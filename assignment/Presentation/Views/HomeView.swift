@@ -31,10 +31,6 @@ final class HomeView: BaseView {
     
     // MARK: - Methods
     
-    override func setStyle() {
-        
-    }
-    
     override func setHierarchy() {
         self.addSubviews(collectionView)
     }
@@ -83,7 +79,7 @@ private extension HomeView {
         let footer = getSectionFooter()
         section.boundarySupplementaryItems = [footer]
         section.orthogonalScrollingBehavior = .paging
-        section.contentInsets = .init(top: 0, leading: 0, bottom: 23, trailing: 0)
+        section.contentInsets = .init(top: 0, leading: 0, bottom: 80, trailing: 0)
         
         return section
     }
@@ -175,7 +171,7 @@ private extension HomeView {
             ),
             elementKind: UICollectionView.elementKindSectionFooter,
             alignment: .bottomLeading,
-            absoluteOffset: CGPoint(x: -140, y: 8)
+            absoluteOffset: CGPoint(x: -140, y: -32)
         )
         return footer
      }
