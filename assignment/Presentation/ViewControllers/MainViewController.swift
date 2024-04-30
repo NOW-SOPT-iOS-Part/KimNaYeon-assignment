@@ -43,6 +43,7 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setNavigationBar()
         setDelegate()
         registerCell()
         setPageViewController()
@@ -60,6 +61,10 @@ final class MainViewController: UIViewController {
 private extension MainViewController {
     
     // MARK: - Methods
+    
+    func setNavigationBar() {
+        self.navigationController?.navigationBar.isHidden = true
+    }
     
     func setDelegate() {
         collectionView.delegate = self
