@@ -15,7 +15,7 @@ final class WelcomeView: BaseView {
     
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = ImageLiterals.Logo.tving_logo
+        imageView.image = .tvingLogo
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()

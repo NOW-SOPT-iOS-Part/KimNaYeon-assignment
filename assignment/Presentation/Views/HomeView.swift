@@ -178,7 +178,6 @@ private extension HomeView {
             ),
             elementKind: UICollectionView.elementKindSectionFooter,
             alignment: .bottomLeading
-//            containerAnchor: NSCollectionLayoutAnchor(edges: [.bottom], absoluteOffset: CGPoint(x: -140, y: 0))
 //            absoluteOffset: CGPoint(x: -140, y: -10)
         )
         return footer

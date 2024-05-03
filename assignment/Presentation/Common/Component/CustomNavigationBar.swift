@@ -15,14 +15,14 @@ class CustomNavigationBar: BaseView {
 
     private lazy var logoView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = ImageLiterals.Logo.tving_white
+        imageView.image = .tvingWhite
         imageView.isHidden = true
         return imageView
     }()
     
     lazy var profileButton: UIButton = {
         let button = UIButton()
-        button.setImage(ImageLiterals.Image.bears_logo, for: .normal)
+        button.setImage(.bearsLogo, for: .normal)
         button.isHidden = true
         return button
     }()

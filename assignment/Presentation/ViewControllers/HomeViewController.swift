@@ -66,7 +66,9 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let sectionType = Section.allCases[section]
         switch sectionType {
-        case .carousel, .mustSeeContent, .paramount:
+        case .carousel:
+            return carouselMovies.count
+        case .mustSeeContent, .paramount:
             return movies.count
         case .liveChannel:
             return liveChannels.count

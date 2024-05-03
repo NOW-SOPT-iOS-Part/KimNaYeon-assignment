@@ -14,12 +14,12 @@ struct MenuModel {
 extension MenuModel {
     static func menuData() -> [MenuModel] {
         return [
-            MenuModel(title: "홈"),
-            MenuModel(title: "실시간"),
-            MenuModel(title: "TV프로그램"),
-            MenuModel(title: "영화"),
-            MenuModel(title: "파라마운트+"),
-            MenuModel(title: "KBO")
+            MenuModel(title: I18N.Main.home),
+            MenuModel(title: I18N.Main.live),
+            MenuModel(title: I18N.Main.tv),
+            MenuModel(title: I18N.Main.movie),
+            MenuModel(title: I18N.Main.paramount),
+            MenuModel(title: I18N.Main.kbo)
         ]
     }
 }

@@ -15,8 +15,8 @@ struct ImageBannerModel {
 extension ImageBannerModel {
     static func imageBannerData() -> [ImageBannerModel] {
         return [
-            ImageBannerModel(image: UIImage(resource: .bearsWhiteRect)),
-            ImageBannerModel(image: UIImage(resource: .bearsBlackRect)),
+            ImageBannerModel(image: .bearsWhiteRect),
+            ImageBannerModel(image: .bearsBlackRect),
         ]
     }
 }

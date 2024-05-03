@@ -26,6 +26,15 @@ enum I18N {
         static let saveText = "저장하기"
     }
     
+    enum Main {
+        static let home = "홈"
+        static let live = "실시간"
+        static let tv = "TV프로그램"
+        static let movie = "영화"
+        static let paramount = "파라마운트+"
+        static let kbo = "KBO"
+    }
+    
     enum Home {
         static let mustSeeContentText = "티빙에서 꼭 봐야하는 콘텐츠"
         static let liveChannlText = "인기 LIVE 채널"
