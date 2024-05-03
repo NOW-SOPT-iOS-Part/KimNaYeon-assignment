@@ -112,7 +112,7 @@ extension ChannelCollectionViewCell {
         rank: Int,
         channel: String,
         program: String,
-        viewership: Double
+        viewership: Float
     ) {
         imageView.image = image
         rankLabel.text = "\(rank)"

@@ -25,4 +25,10 @@ enum I18N {
         static let enterNicknameTitle = "닉네임을 입력해주세요"
         static let saveText = "저장하기"
     }
+    
+    enum Home {
+        static let mustSeeContentText = "티빙에서 꼭 봐야하는 콘텐츠"
+        static let liveChannlText = "인기 LIVE 채널"
+        static let paramountText = "1화 무료! 파라마운트+ 인기 시리즈"
+    }
 }
