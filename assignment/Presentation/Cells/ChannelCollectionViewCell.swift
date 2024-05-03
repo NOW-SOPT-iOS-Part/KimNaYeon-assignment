@@ -31,6 +31,7 @@ final class ChannelCollectionViewCell: UICollectionViewCell {
         label.textColor = .white
         label.font = .font(ofSize: 10, weight: .w400)
         label.numberOfLines = 1
+        label.lineBreakMode = .byTruncatingTail
         return label
     }()
     
@@ -39,6 +40,7 @@ final class ChannelCollectionViewCell: UICollectionViewCell {
         label.textColor = .gray2
         label.font = .font(ofSize: 10, weight: .w400)
         label.numberOfLines = 1
+        label.lineBreakMode = .byTruncatingTail
         return label
     }()
     
@@ -47,6 +49,7 @@ final class ChannelCollectionViewCell: UICollectionViewCell {
         label.textColor = .gray2
         label.font = .font(ofSize: 10, weight: .w400)
         label.numberOfLines = 1
+        label.lineBreakMode = .byTruncatingTail
         return label
     }()
     
@@ -72,31 +75,31 @@ final class ChannelCollectionViewCell: UICollectionViewCell {
         }
         
         rankLabel.snp.makeConstraints {
-            $0.width.equalTo(12)
             $0.height.equalTo(30)
             $0.top.equalTo(imageView.snp.bottom).offset(8)
             $0.leading.equalToSuperview().inset(9)
         }
+        rankLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         
         channelLabel.snp.makeConstraints {
             $0.height.equalTo(16)
             $0.top.equalTo(imageView.snp.bottom).offset(11)
             $0.leading.equalTo(rankLabel.snp.trailing).offset(7)
-            $0.trailing.lessThanOrEqualToSuperview()
+            $0.trailing.equalToSuperview()
         }
         
         programLabel.snp.makeConstraints {
             $0.height.equalTo(16)
             $0.top.equalTo(channelLabel.snp.bottom).offset(-1)
             $0.leading.equalTo(channelLabel)
-            $0.trailing.lessThanOrEqualToSuperview()
+            $0.trailing.equalToSuperview()
         }
         
         viewershipLabel.snp.makeConstraints {
             $0.height.equalTo(16)
             $0.top.equalTo(programLabel.snp.bottom)
             $0.leading.equalTo(channelLabel)
-            $0.trailing.lessThanOrEqualToSuperview()
+            $0.trailing.equalToSuperview()
             $0.bottom.equalToSuperview()
         }
     }
