@@ -56,6 +56,13 @@
 		951D91982BE4CCDB0039E4A4 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91972BE4CCDB0039E4A4 /* MovieModel.swift */; };
 		951D919A2BE4CD1F0039E4A4 /* LiveChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91992BE4CD1F0039E4A4 /* LiveChannelModel.swift */; };
 		951D919C2BE4D09F0039E4A4 /* ImageBannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D919B2BE4D09F0039E4A4 /* ImageBannerModel.swift */; };
+		951D91A22BE79EC60039E4A4 /* MoyaLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91A12BE79EC60039E4A4 /* MoyaLoggingPlugin.swift */; };
+		951D91A52BE79F1D0039E4A4 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 951D91A42BE79F1D0039E4A4 /* Moya */; };
+		951D91A72BE79F470039E4A4 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91A62BE79F470039E4A4 /* NetworkResult.swift */; };
+		951D91AB2BE7A0820039E4A4 /* KobisOpenAPITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91AA2BE7A0820039E4A4 /* KobisOpenAPITargetType.swift */; };
+		951D91AD2BE7A3EA0039E4A4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91AC2BE7A3EA0039E4A4 /* Config.swift */; };
+		951D91B22BE7A8B90039E4A4 /* KobisOpenAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91B12BE7A8B90039E4A4 /* KobisOpenAPIService.swift */; };
+		951D91B52BE7AD320039E4A4 /* KobisResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91B42BE7AD320039E4A4 /* KobisResponseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +116,12 @@
 		951D91972BE4CCDB0039E4A4 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		951D91992BE4CD1F0039E4A4 /* LiveChannelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChannelModel.swift; sourceTree = "<group>"; };
 		951D919B2BE4D09F0039E4A4 /* ImageBannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageBannerModel.swift; sourceTree = "<group>"; };
+		951D91A12BE79EC60039E4A4 /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
+		951D91A62BE79F470039E4A4 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		951D91AA2BE7A0820039E4A4 /* KobisOpenAPITargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KobisOpenAPITargetType.swift; sourceTree = "<group>"; };
+		951D91AC2BE7A3EA0039E4A4 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		951D91B12BE7A8B90039E4A4 /* KobisOpenAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KobisOpenAPIService.swift; sourceTree = "<group>"; };
+		951D91B42BE7AD320039E4A4 /* KobisResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KobisResponseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				951D91A52BE79F1D0039E4A4 /* Moya in Frameworks */,
 				951D90CF2BCD7B9A0039E4A4 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,6 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				951D90C52BCD7AC70039E4A4 /* Application */,
+				951D91B32BE7AC800039E4A4 /* Data */,
+				951D919D2BE79DA40039E4A4 /* Network */,
 				951D90C72BCD7AE20039E4A4 /* Presentation */,
 				951D90C62BCD7ADC0039E4A4 /* Global */,
 				951D90BF2BCD78F50039E4A4 /* Info.plist */,
@@ -315,6 +331,50 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		951D919D2BE79DA40039E4A4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				951D91A02BE79DE40039E4A4 /* Base */,
+				951D919F2BE79DDA0039E4A4 /* API */,
+				951D919E2BE79DD30039E4A4 /* Service */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		951D919E2BE79DD30039E4A4 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				951D91B12BE7A8B90039E4A4 /* KobisOpenAPIService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		951D919F2BE79DDA0039E4A4 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				951D91AA2BE7A0820039E4A4 /* KobisOpenAPITargetType.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		951D91A02BE79DE40039E4A4 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				951D91A12BE79EC60039E4A4 /* MoyaLoggingPlugin.swift */,
+				951D91A62BE79F470039E4A4 /* NetworkResult.swift */,
+				951D91AC2BE7A3EA0039E4A4 /* Config.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		951D91B32BE7AC800039E4A4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				951D91B42BE7AD320039E4A4 /* KobisResponseModel.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -333,6 +393,7 @@
 			name = assignment;
 			packageProductDependencies = (
 				951D90CE2BCD7B9A0039E4A4 /* SnapKit */,
+				951D91A42BE79F1D0039E4A4 /* Moya */,
 			);
 			productName = assignment;
 			productReference = 951D90AE2BCD78F30039E4A4 /* assignment.app */;
@@ -364,6 +425,7 @@
 			mainGroup = 951D90A52BCD78F30039E4A4;
 			packageReferences = (
 				951D90CD2BCD7B9A0039E4A4 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				951D91A32BE79F1D0039E4A4 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 951D90AF2BCD78F30039E4A4 /* Products */;
 			projectDirPath = "";
@@ -402,6 +464,7 @@
 				951D91312BDBF94B0039E4A4 /* MainViewController.swift in Sources */,
 				951D90E72BCD83B90039E4A4 /* FontLiterals.swift in Sources */,
 				951D916F2BE10D7C0039E4A4 /* ImageCarouselCollectionViewCell.swift in Sources */,
+				951D91AB2BE7A0820039E4A4 /* KobisOpenAPITargetType.swift in Sources */,
 				951D913E2BDC21780039E4A4 /* MenuCollectionViewCell.swift in Sources */,
 				951D91652BDFFF9B0039E4A4 /* HomeView.swift in Sources */,
 				951D90FB2BD18F500039E4A4 /* UIButton+.swift in Sources */,
@@ -409,6 +472,7 @@
 				951D91982BE4CCDB0039E4A4 /* MovieModel.swift in Sources */,
 				951D90EB2BCD8EF60039E4A4 /* LoginView.swift in Sources */,
 				951D916D2BE109C90039E4A4 /* HomeHeaderReusableView.swift in Sources */,
+				951D91AD2BE7A3EA0039E4A4 /* Config.swift in Sources */,
 				951D90FF2BD190970039E4A4 /* WelcomeView.swift in Sources */,
 				951D91082BD23E880039E4A4 /* CreateNicknameViewController.swift in Sources */,
 				951D919A2BE4CD1F0039E4A4 /* LiveChannelModel.swift in Sources */,
@@ -418,6 +482,7 @@
 				951D90F52BD178210039E4A4 /* UITextField+.swift in Sources */,
 				951D91672BE00C780039E4A4 /* MovieCollectionViewCell.swift in Sources */,
 				951D91042BD233810039E4A4 /* MakeAlert.swift in Sources */,
+				951D91B22BE7A8B90039E4A4 /* KobisOpenAPIService.swift in Sources */,
 				951D913B2BDC113B0039E4A4 /* HomeViewController.swift in Sources */,
 				951D90F32BD177160039E4A4 /* StringLiterals.swift in Sources */,
 				951D90FD2BD1907A0039E4A4 /* WelcomeViewController.swift in Sources */,
@@ -426,13 +491,16 @@
 				951D90ED2BCD90B30039E4A4 /* UIView+.swift in Sources */,
 				951D919C2BE4D09F0039E4A4 /* ImageBannerModel.swift in Sources */,
 				951D90E92BCD8C360039E4A4 /* BaseView.swift in Sources */,
+				951D91A22BE79EC60039E4A4 /* MoyaLoggingPlugin.swift in Sources */,
 				951D91632BDFFECF0039E4A4 /* SizeLiterals.swift in Sources */,
 				951D910E2BD2BFFB0039E4A4 /* CustomTextField.swift in Sources */,
 				951D90B22BCD78F30039E4A4 /* AppDelegate.swift in Sources */,
+				951D91A72BE79F470039E4A4 /* NetworkResult.swift in Sources */,
 				951D90F72BD18B990039E4A4 /* UIStackView+.swift in Sources */,
 				951D910A2BD23E9A0039E4A4 /* CreateNicknameView.swift in Sources */,
 				951D91692BE00CB30039E4A4 /* ChannelCollectionViewCell.swift in Sources */,
 				951D91012BD231AB0039E4A4 /* String+.swift in Sources */,
+				951D91B52BE7AD320039E4A4 /* KobisResponseModel.swift in Sources */,
 				951D91412BDC22A90039E4A4 /* MenuModel.swift in Sources */,
 				951D91372BDBFFB90039E4A4 /* UIImage+.swift in Sources */,
 				951D90B42BCD78F30039E4A4 /* SceneDelegate.swift in Sources */,
@@ -587,6 +655,8 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				KOBIS_KEY = e3b5b205063e4aac636c44a84505f786;
+				KOBIS_OPENAPI = "http://www.kobis.or.kr/kobisopenapi/webservice/rest";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -614,6 +684,8 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				KOBIS_KEY = e3b5b205063e4aac636c44a84505f786;
+				KOBIS_OPENAPI = "http://www.kobis.or.kr/kobisopenapi/webservice/rest";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -659,6 +731,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		951D91A32BE79F1D0039E4A4 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -666,6 +746,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 951D90CD2BCD7B9A0039E4A4 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		951D91A42BE79F1D0039E4A4 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 951D91A32BE79F1D0039E4A4 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
