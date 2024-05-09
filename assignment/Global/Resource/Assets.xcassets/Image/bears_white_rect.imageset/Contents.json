@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "bears_white_rect.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

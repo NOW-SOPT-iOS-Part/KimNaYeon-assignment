@@ -15,14 +15,14 @@ final class CustomTextField: UITextField {
     
     private let clearButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        button.setImage(UIImage(named: "icon_x-circle"), for: .normal)
+        button.setImage(.iconXCircle, for: .normal)
         button.isHidden = true
         return button
     }()
     
     private let eyeButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        button.setImage(UIImage(named: "icon_eye"), for: .normal)
+        button.setImage(.iconEye, for: .normal)
         button.isHidden = true
         return button
     }()
@@ -99,6 +99,6 @@ extension CustomTextField {
     @objc
     func eyeButtonDidTap(_ sender: UIButton) {
         isSecureTextEntry.toggle()
-        sender.setImage(UIImage(named: self.isSecureTextEntry ? "icon_eye" : "icon_eye-slash"), for: .normal)
+        sender.setImage(self.isSecureTextEntry ? .iconEye : .iconEyeSlash, for: .normal)
     }
 }

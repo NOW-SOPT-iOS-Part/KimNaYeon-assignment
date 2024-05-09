@@ -18,6 +18,7 @@ final class WelcomeViewController: UIViewController {
     // MARK: - UI Components
     
     private lazy var rootView = WelcomeView(nickname: nickname)
+    private lazy var goMainButton = rootView.goMainButton
     
     // MARK: - Life Cycles
     
@@ -31,14 +32,26 @@ final class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         
         setNavigationBar()
+        setButtonAction()
     }
 }
 
 // MARK: - Extensions
 
-extension WelcomeViewController {
+private extension WelcomeViewController {
     
     func setNavigationBar() {
         self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    func setButtonAction() {
+        goMainButton.addTarget(self, action: #selector(goMainButtonDidTap), for: .touchUpInside)
+    }
+    
+    // MARK: - Actions
+    @objc
+    func goMainButtonDidTap() {
+        let mainVC = MainViewController()
+        self.navigationController?.pushViewController(mainVC, animated: true)
     }
 }

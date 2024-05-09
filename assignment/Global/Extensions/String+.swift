@@ -20,4 +20,11 @@ extension String {
         let emailTest = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
         return emailTest.evaluate(with: self)
     }
+    
+    func getLabelContentSize(withFont font: UIFont) -> CGSize {
+        let label = UILabel()
+        label.font = font
+        label.text = self
+        return label.intrinsicContentSize
+    }
 }
