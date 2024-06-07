@@ -16,6 +16,8 @@ final class HomeViewController: UIViewController {
     private let liveChannels = LiveChannelModel.liveChannelData()
     private let imageBanners = ImageBannerModel.imageBannerData()
     
+    private var dailyBoxOfficeList: [DailyBoxOffice] = []
+    
     // MARK: - UI Components
     
     private let rootView = HomeView()
@@ -32,6 +34,7 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fetchData()
         setDelegate()
         registerCell()
     }
@@ -55,6 +58,34 @@ private extension HomeViewController {
         collectionView.register(HomeHeaderReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HomeHeaderReusableView.identifier)
         collectionView.register(HomeFooterReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: HomeFooterReusableView.identifier)
     }
+    
+    func fetchData() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd"
+        guard let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date()) else { return }
+        let dateString = dateFormatter.string(from: yesterday)
+        
+        KobisOpenAPIService.shared.getDailyBoxOffice(key: Config.kobisKey, targetDate: dateString) { [weak self] response in
+            guard let self  = self else { return }
+            switch response {
+            case .success(let data):
+                guard let data = data as? DailyBoxOfficeResponseModel else { return }
+                self.dailyBoxOfficeList = data.boxOfficeResult.dailyBoxOfficeList
+                self.collectionView.reloadData()
+                print("영화 데이터: \(self.dailyBoxOfficeList)")
+            case .requestErr:
+                print("요청 오류 입니다")
+            case .decodedErr:
+                print("디코딩 오류 입니다")
+            case .pathErr:
+                print("경로 오류 입니다")
+            case .serverErr:
+                print("서버 오류입니다")
+            case .networkFail:
+                print("네트워크 오류입니다")
+            }
+        }
+    }
 }
 
 extension HomeViewController: UICollectionViewDataSource {
@@ -68,7 +99,9 @@ extension HomeViewController: UICollectionViewDataSource {
         switch sectionType {
         case .carousel:
             return carouselMovies.count
-        case .mustSeeContent, .paramount:
+        case .mustSeeContent:
+            return dailyBoxOfficeList.count
+        case .paramount:
             return movies.count
         case .liveChannel:
             return liveChannels.count
@@ -95,7 +128,13 @@ extension HomeViewController: UICollectionViewDataSource {
                 viewership: data.viewership
             )
             return cell
-        case .mustSeeContent, .paramount:
+        case .mustSeeContent:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as? MovieCollectionViewCell else { return UICollectionViewCell() }
+            let name = dailyBoxOfficeList[indexPath.item].movieName
+            let ifImageExist = movies.count > indexPath.item
+            cell.configure(image: ifImageExist ? movies[indexPath.item].image : nil, title: name)
+            return cell
+        case .paramount:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as? MovieCollectionViewCell else { return UICollectionViewCell() }
             let data = movies[indexPath.item]
             cell.configure(image: data.image, title: data.title)
