@@ -94,6 +94,8 @@ extension CustomTextField {
     @objc
     func clearButtonDidTap(_ sender: UIButton) {
         text = ""
+        /// text를 빈 값으로 설정했으나 UITextField 내부에서 빈 값임을 인지하지 못하여 수동적으로 값이 변경됐음을 알립니다.
+        sendActions(for: .valueChanged)
     }
     
     @objc
