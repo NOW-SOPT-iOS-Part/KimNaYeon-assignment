@@ -7,12 +7,16 @@
 
 import UIKit
 
+import RxCocoa
+import RxSwift
 import SnapKit
 
 final class LoginViewController: UIViewController {
     
     // MARK: - Properties
     
+    private let viewModel = LoginViewModel()
+    private let disposeBag = DisposeBag()
     private var nickname = ""
     
     // MARK: - UI Components
@@ -34,8 +38,65 @@ final class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setDelegate()
+        bindViewModel()
         setButtonAction()
+    }
+    
+    private func bindViewModel() {
+        let idTextFieldFocusEvent = idTextField.rx.controlEvent(.editingDidBegin)
+            .map { return TextFieldFocusType.id }
+            .asObservable()
+        let passwordTextFieldFocusEvent = passwordTextField.rx.controlEvent(.editingDidBegin)
+            .map { return TextFieldFocusType.password }
+            .asObservable()
+        let idTextFieldIsEntered = idTextField.rx.text
+            .orEmpty
+            .distinctUntilChanged()
+            .map { return !$0.isEmpty }
+            .asObservable()
+        let passwordTextFieldIsEntered = passwordTextField.rx.text
+            .orEmpty
+            .distinctUntilChanged()
+            .map { return !$0.isEmpty }
+            .asObservable()
+        
+        let input = LoginViewModel.Input(
+            idTextFieldFocusEvent: idTextFieldFocusEvent,
+            passwordTextFieldFocusEvent: passwordTextFieldFocusEvent,
+            idTextFieldDidChangeEvent: idTextField.rx.text.asObservable(),
+            passwordTextFieldDidChangeEvent: passwordTextField.rx.text.asObservable(),
+            idTextFieldIsEntered: idTextFieldIsEntered,
+            passwordTextFieldIsEntered: passwordTextFieldIsEntered,
+            loginButtonDidTapEvent: loginButton.rx.tap.asObservable()
+        )
+        
+        let output = viewModel.transform(from: input, disposeBag: disposeBag)
+        
+        output.textFieldFocus.subscribe(onNext: { [weak self] textFieldType in
+            switch textFieldType {
+            case .id:
+                self?.idTextField.makeBorder(width: 1, color: .gray2)
+                self?.passwordTextField.makeBorder(width: 0, color: .clear)
+            case .password:
+                self?.passwordTextField.makeBorder(width: 1, color: .gray2)
+                self?.idTextField.makeBorder(width: 0, color: .clear)
+            }
+        }).disposed(by: disposeBag)
+        
+        output.isAllEntered.subscribe(onNext: { [weak self] isAllEntered in
+            self?.changeLoginButtonActivationState(to: isAllEntered ? true : false)
+        }).disposed(by: disposeBag)
+        
+        output.isValid.subscribe(onNext: { [weak self] _ in
+            guard let self = self else { return }
+            let welcomeVC = WelcomeViewController()
+            welcomeVC.nickname = self.nickname
+            self.navigationController?.pushViewController(welcomeVC, animated: true)
+        }).disposed(by: disposeBag)
+        
+        output.alert.subscribe(onNext: { [weak self] text in
+            self?.makeAlert(title: "", message: text)
+        }).disposed(by: disposeBag)
     }
 }
 
@@ -43,13 +104,7 @@ final class LoginViewController: UIViewController {
 
 private extension LoginViewController {
     
-    func setDelegate() {
-        idTextField.delegate = self
-        passwordTextField.delegate = self
-    }
-    
     func setButtonAction() {
-        loginButton.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
         goToCreateNicknameButton.addTarget(self, action: #selector(goToCreateNicknameButtonDidTap), for: .touchUpInside)
     }
     
@@ -61,45 +116,11 @@ private extension LoginViewController {
     
     // MARK: - Actions
     
-    @objc
-    func loginButtonDidTap() {
-        if let id = idTextField.text, let pw = passwordTextField.text {
-            guard id.isValidEmail() else {
-                return makeAlert(title: "", message: I18N.Auth.emailValidationText)
-            }
-            guard pw.isValidPassword() else {
-                return makeAlert(title: "", message: I18N.Auth.pwValidationText)
-            }
-            let welcomeVC = WelcomeViewController()
-            welcomeVC.nickname = nickname
-            self.navigationController?.pushViewController(welcomeVC, animated: true)
-        }
-    }
-    
     @objc func goToCreateNicknameButtonDidTap() {
         let createNicknameVC = CreateNicknameViewController()
         createNicknameVC.delegate = self
         createNicknameVC.modalPresentationStyle = .pageSheet
         self.present(createNicknameVC, animated: true)
-    }
-}
-
-extension LoginViewController: UITextFieldDelegate {
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.makeBorder(width: 1, color: .gray2)
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.makeBorder(width: 0, color: .clear)
-    }
-    
-    func textFieldDidChangeSelection(_ textField: UITextField) {
-        if !idTextField.isEmpty, !passwordTextField.isEmpty {
-            changeLoginButtonActivationState(to: true)
-        } else {
-            changeLoginButtonActivationState(to: false)
-        }
     }
 }
 

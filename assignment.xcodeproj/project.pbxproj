@@ -63,6 +63,9 @@
 		951D91AD2BE7A3EA0039E4A4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91AC2BE7A3EA0039E4A4 /* Config.swift */; };
 		951D91B22BE7A8B90039E4A4 /* KobisOpenAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91B12BE7A8B90039E4A4 /* KobisOpenAPIService.swift */; };
 		951D91B52BE7AD320039E4A4 /* KobisResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D91B42BE7AD320039E4A4 /* KobisResponseModel.swift */; };
+		95B923312C12E85500A944F1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B923302C12E85500A944F1 /* LoginViewModel.swift */; };
+		95B923342C12E8F300A944F1 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 95B923332C12E8F300A944F1 /* RxCocoa */; };
+		95B923362C12E8F300A944F1 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 95B923352C12E8F300A944F1 /* RxRelay */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +125,7 @@
 		951D91AC2BE7A3EA0039E4A4 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		951D91B12BE7A8B90039E4A4 /* KobisOpenAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KobisOpenAPIService.swift; sourceTree = "<group>"; };
 		951D91B42BE7AD320039E4A4 /* KobisResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KobisResponseModel.swift; sourceTree = "<group>"; };
+		95B923302C12E85500A944F1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +133,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95B923342C12E8F300A944F1 /* RxCocoa in Frameworks */,
 				951D91A52BE79F1D0039E4A4 /* Moya in Frameworks */,
+				95B923362C12E8F300A944F1 /* RxRelay in Frameworks */,
 				951D90CF2BCD7B9A0039E4A4 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,6 +199,7 @@
 				951D913C2BDC20C00039E4A4 /* Cells */,
 				951D90C92BCD7B0B0039E4A4 /* Views */,
 				951D90C82BCD7B020039E4A4 /* ViewControllers */,
+				95B9232F2C12E84000A944F1 /* ViewModels */,
 				951D90D22BCD81AA0039E4A4 /* Common */,
 			);
 			path = Presentation;
@@ -375,6 +382,14 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		95B9232F2C12E84000A944F1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				95B923302C12E85500A944F1 /* LoginViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -394,6 +409,8 @@
 			packageProductDependencies = (
 				951D90CE2BCD7B9A0039E4A4 /* SnapKit */,
 				951D91A42BE79F1D0039E4A4 /* Moya */,
+				95B923332C12E8F300A944F1 /* RxCocoa */,
+				95B923352C12E8F300A944F1 /* RxRelay */,
 			);
 			productName = assignment;
 			productReference = 951D90AE2BCD78F30039E4A4 /* assignment.app */;
@@ -426,6 +443,7 @@
 			packageReferences = (
 				951D90CD2BCD7B9A0039E4A4 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				951D91A32BE79F1D0039E4A4 /* XCRemoteSwiftPackageReference "Moya" */,
+				95B923322C12E8F300A944F1 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 951D90AF2BCD78F30039E4A4 /* Products */;
 			projectDirPath = "";
@@ -469,6 +487,7 @@
 				951D91652BDFFF9B0039E4A4 /* HomeView.swift in Sources */,
 				951D90FB2BD18F500039E4A4 /* UIButton+.swift in Sources */,
 				951D91712BE10F2F0039E4A4 /* ImageBannerCollectionViewCell.swift in Sources */,
+				95B923312C12E85500A944F1 /* LoginViewModel.swift in Sources */,
 				951D91982BE4CCDB0039E4A4 /* MovieModel.swift in Sources */,
 				951D90EB2BCD8EF60039E4A4 /* LoginView.swift in Sources */,
 				951D916D2BE109C90039E4A4 /* HomeHeaderReusableView.swift in Sources */,
@@ -739,6 +758,14 @@
 				minimumVersion = 15.0.3;
 			};
 		};
+		95B923322C12E8F300A944F1 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.7.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -751,6 +778,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 951D91A32BE79F1D0039E4A4 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		95B923332C12E8F300A944F1 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95B923322C12E8F300A944F1 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		95B923352C12E8F300A944F1 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95B923322C12E8F300A944F1 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
